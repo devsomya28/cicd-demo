@@ -1,1 +1,1 @@
-console.log("CI/CD working 🚀");
+console.log("CI/CD working🚀");
