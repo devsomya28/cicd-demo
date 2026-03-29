@@ -4,17 +4,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker build -t cicd-demo .'
+                echo 'Building app...'
             }
         }
+
         stage('Test') {
             steps {
-                sh 'echo "Test passed ✅"'
+                echo 'Testing app...'
             }
         }
+
         stage('Deploy') {
             steps {
-                sh 'docker run --rm cicd-demo'
+                echo 'Deploying app...'
             }
         }
     }
