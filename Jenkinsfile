@@ -4,19 +4,25 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker build -t cicd-demo .'
+                sh 'npm install'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'echo "Running tests..."'
+                sh 'echo "No tests yet"'
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                sh 'docker build -t cicd-demo .'
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'docker run -d -p 10000:10000 cicd-demo'
+                sh 'echo "Push to Render via GitHub"'
             }
         }
     }
